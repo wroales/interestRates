@@ -1,0 +1,54 @@
+
+Example Run:
+
+lou1@lou1:~/runtime$ /home/lou1/jdk1.7.0_75/bin/java -jar /home/lou1/runtime/getrates.jar 
+==in  MAIN ===
+==in  getRiskfreeRates() Constructor ==
+==in  getTreasHTML Constructor ==
+Enter getTreasHTMLLink()
+CALLING with URL=https://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yield
+title : Daily Treasury Yield Curve Rates
+
+link : http://data.treasury.gov/feed.svc/DailyTreasuryYieldCurveRateData?$filter=month(NEW_DATE)%20eq%201%20and%20year(NEW_DATE)%20eq%202018
+Exit getTreasHTMLLink()
+Entry getRates()
+Root element :feed
+----------------------------
+0 ecnt=17 > Current Element :entry
+1 ecnt=16 > Current Element :entry
+2 ecnt=15 > Current Element :entry
+3 ecnt=14 > Current Element :entry
+4 ecnt=13 > Current Element :entry
+5 ecnt=12 > Current Element :entry
+6 ecnt=11 > Current Element :entry
+7 ecnt=10 > Current Element :entry
+8 ecnt=9 > Current Element :entry
+9 ecnt=8 > Current Element :entry
+10 ecnt=7 > Current Element :entry
+11 ecnt=6 > Current Element :entry
+12 ecnt=5 > Current Element :entry
+13 ecnt=4 > Current Element :entry
+14 ecnt=3 > Current Element :entry
+15 ecnt=2 > Current Element :entry
+16 ecnt=1 > Current Element :entry
+17 ecnt=0 > Current Element :entry
+ LEN =19
+===DUMP OBJECT BEGIN===
+REC_ID   =7026
+NEW_DATE =2018-01-26
+BC_1MONTH=1.24
+BC_3MONTH=1.41
+BC_6MONTH=1.64
+BC_1YEAR =1.8
+BC_2YEAR =2.13
+BC_3YEAR =2.24
+BC_5YEAR =2.47
+BC_7YEAR =2.6
+BC_10YEAR=2.66
+BC_20YEAR=2.79
+BC_30YEAR=2.91
+===DUMP OBJECT END  ===
+Entry Point dbInsertRiskFreeRate() 
+debug INSERT SQL= INSERT INTO riskFreeRates (REC_ID,NEW_DATE,BC_1MONTH,BC_3MONTH,BC_6MONTH,BC_1YEAR,BC_2YEAR,BC_3YEAR,BC_5YEAR,BC_7YEAR,BC_10YEAR,BC_20YEAR,BC_30YEAR) VALUES ('7026','2018-01-26','1.24','1.41','1.64','1.8','2.13','2.24','2.47','2.6','2.66','2.79','2.91')
+Exit Point dbInsertRiskFreeRate() 
+lou1@lou1:~/runtime$ 
